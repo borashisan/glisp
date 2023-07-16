@@ -44,6 +44,7 @@ func parser(str string) ([]string, error) {
 		currentToken += string(c)
 	}
 
+	// 改行文字がない場合も最後のトークンを追加する
 	if currentToken != "" {
 		result = append(result, currentToken)
 	}
