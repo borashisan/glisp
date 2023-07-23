@@ -26,3 +26,11 @@ func TestParser(t *testing.T) {
 		}
 	}
 }
+
+func TestCons(t *testing.T) {
+	tests := []struct {
+		name  string
+		input interface{}
+		want  DotPair
+	}{}
+}

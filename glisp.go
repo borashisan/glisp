@@ -6,6 +6,35 @@ import (
 	"os"
 )
 
+type Atom interface{}
+
+type Symbol string
+
+type Number float64
+
+type String string
+
+type DotPair struct {
+	car interface{}
+	cdr interface{}
+}
+
+type number struct {
+	value int
+}
+
+func (d *DotPair) Car() interface{} {
+	return d.car
+}
+
+func (d *DotPair) Cdr() interface{} {
+	return d.cdr
+}
+
+func cons(car interface{}, cdr interface{}) *DotPair {
+	return &DotPair{car, cdr}
+}
+
 func main() {
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Print("> ")
